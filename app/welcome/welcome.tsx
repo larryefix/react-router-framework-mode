@@ -4,7 +4,7 @@ import logoLight from "./logo-light.svg"
 
 export function Welcome() {
   const loaderData = useLoaderData()
-  const userId = loaderData.userId
+  const someId = loaderData.someId
   return (
     <main className="flex items-center justify-center pt-16 pb-4">
       <div className="flex-1 flex flex-col items-center gap-16 min-h-0">
@@ -23,7 +23,7 @@ export function Welcome() {
           </div>
         </header>
         <div className="max-w-[300px] w-full space-y-6 px-4">
-          <Form action={`/color-info/${userId}`} method="post">
+          <Form action={`/color-info/${someId}`} method="post">
             <label
               htmlFor="favoriteColor"
               className="leading-6 text-gray-700 dark:text-gray-200 text-center"
@@ -38,14 +38,14 @@ export function Welcome() {
               className="w-full rounded-xl border border-gray-200 p-4 dark:border-gray-700 mt-2 mb-5"
             />
             <label
-              htmlFor="userId"
+              htmlFor="selectedNumber"
               className="leading-6 text-gray-700 dark:text-gray-200 text-center"
             >
               Pick a number
             </label>
             <select
-              id="userId"
-              name="userId"
+              id="selectedNumber"
+              name="selectedNumber"
               defaultValue={"default"}
               className="w-full rounded-xl border border-gray-200 p-4 dark:border-gray-700 mt-2 mb-8"
             >

@@ -12,7 +12,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader(loaderArgs: Route.LoaderArgs) {
-  console.log({ loaderArgs })
+  console.log({ loaderArgs, source: "logged by loader in color-info route" })
   return {
     colorInfo:
       "Colors can significantly affect our mood; for example, blue is often associated with calmness, while red can energize and stimulate appetite. Additionally, studies show that people tend to remember information better when it is presented in color rather than in black and white.",
@@ -33,11 +33,11 @@ export default function ColorInfo({
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData()
   const color = formData.get("color")
-  const userId = formData.get("userId")
+  const selectedNumber = formData.get("selectedNumber")
   console.log({
     color,
-    userId,
+    selectedNumber,
     source: "Logged by action for ColorInfo route",
   })
-  return { color, userId }
+  return { color, selectedNumber }
 }

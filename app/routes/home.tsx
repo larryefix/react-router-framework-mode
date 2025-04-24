@@ -12,11 +12,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader(loaderArgs: Route.LoaderArgs) {
-  const userId = "123"
-  return { userId }
+  const someId = "123"
+  return { someId }
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-  // return <Welcome userId={loaderData.userId} />
+  // return <Welcome someId={loaderData.someId} />
   return <Welcome />
 }
