@@ -3,14 +3,20 @@ import { Welcome } from "../welcome/welcome"
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
+    { title: "React Router Framework Mode" },
     {
       name: "description",
-      content: "Soon to be a React Router Framework App!",
+      content: "A demo app using Framework Mode!",
     },
   ]
 }
 
-export default function Home() {
+export async function loader(loaderArgs: Route.LoaderArgs) {
+  const userId = "123"
+  return { userId }
+}
+
+export default function Home({ loaderData }: Route.ComponentProps) {
+  // return <Welcome userId={loaderData.userId} />
   return <Welcome />
 }
